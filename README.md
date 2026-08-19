@@ -87,7 +87,7 @@ Includes the `arch-timemil-*` runs omitted in the paper.
 
 ## Interpretability/
 
-The purpose of this part of our work is to demonstrate the utility of the inherent interpretability provided by MIL models for the localisation of plasmoids. The folder contains a python file rerunning a training script, modified to save the attention scores during MIL pooling but with the same optimal configuration as previously found for the MIL model, alongside a notebook containing attention-related plots.
+The purpose of this part of our work is to demonstrate the utility of the inherent interpretability provided by MIL models for the localisation of plasmoids. This folder contains a python file rerunning a training script, modified to save the attention scores during MIL pooling but with the same optimal configuration as previously found for the MIL model, alongside a notebook containing attention-related plots.
 
 ---
 
