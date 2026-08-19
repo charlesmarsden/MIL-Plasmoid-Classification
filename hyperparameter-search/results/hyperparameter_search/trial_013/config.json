@@ -1,0 +1,21 @@
+{
+  "architecture": "gated_attention",
+  "batch_size": 16,
+  "classifier_multiplier": 0.5,
+  "cnn_backbone": "plain",
+  "cnn_channels": [
+    24,
+    48,
+    96
+  ],
+  "dropout": 0.25,
+  "embed_dim": 256,
+  "learning_rate": 0.0001,
+  "loss_type": "weighted_bce",
+  "name": "focused_random_009",
+  "noise_std": 0.0,
+  "scale_std": 0.0,
+  "scheduler": "cosine",
+  "trial_id": 13,
+  "weight_decay": 1e-05
+}

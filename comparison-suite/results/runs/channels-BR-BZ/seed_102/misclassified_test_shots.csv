@@ -1,0 +1,17 @@
+Shot,label,probability,prediction,misclassification
+5324,1,0.00094735465,0,false_negative
+5344,1,0.0040464993,0,false_negative
+5359,1,7.796373e-09,0,false_negative
+5492,1,0.09780936,0,false_negative
+5731,1,0.053559467,0,false_negative
+5985,1,0.07070334,0,false_negative
+6008,0,0.5517105,1,false_positive
+6137,1,0.10086917,0,false_negative
+6375,1,0.20392779,0,false_negative
+6431,0,0.3767454,1,false_positive
+6461,0,0.69313955,1,false_positive
+6462,0,0.33714157,1,false_positive
+6464,0,0.6274096,1,false_positive
+6723,0,0.3672839,1,false_positive
+6727,0,0.719474,1,false_positive
+6938,1,0.10064707,0,false_negative

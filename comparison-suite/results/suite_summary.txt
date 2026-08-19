@@ -1,0 +1,135 @@
+PAPER COMPARISON SUITE SUMMARY
+generated: 2026-08-05T13:26:38.849382+00:00
+rows: 100  (one per experiment x seed)
+
+==========================================================================================
+PER-ARM AGGREGATES (mean +/- std over seeds)
+==========================================================================================
+
+baseline-JY  (n=10 seeds: [101, 102, 103, 104, 105, 106, 107, 108, 109, 110], dev=979/143+, test=173/25+, params=1039682)
+    test_f1          0.5276 +/- 0.0515
+    test_pr_auc      0.5370 +/- 0.0360
+    test_roc_auc     0.8051 +/- 0.0182
+    cv_mean_f1       0.5645 +/- 0.0120
+    cv_mean_pr_auc   0.4949 +/- 0.0232
+
+channels-BR-BZ  (n=10 seeds: [101, 102, 103, 104, 105, 106, 107, 108, 109, 110], dev=979/143+, test=173/25+, params=1039826)
+    test_f1          0.5809 +/- 0.0447
+    test_pr_auc      0.6347 +/- 0.0615
+    test_roc_auc     0.8197 +/- 0.0159
+    cv_mean_f1       0.5884 +/- 0.0120
+    cv_mean_pr_auc   0.5080 +/- 0.0225
+
+channels-BR-BZ-BY-JY  (n=10 seeds: [101, 102, 103, 104, 105, 106, 107, 108, 109, 110], dev=979/143+, test=173/25+, params=1040114)
+    test_f1          0.5782 +/- 0.0243
+    test_pr_auc      0.6334 +/- 0.0231
+    test_roc_auc     0.8363 +/- 0.0118
+    cv_mean_f1       0.5845 +/- 0.0125
+    cv_mean_pr_auc   0.5066 +/- 0.0205
+
+arch-timemil-BR-BZ-BY-JY  (n=10 seeds: [101, 102, 103, 104, 105, 106, 107, 108, 109, 110], dev=979/143+, test=173/25+, params=1190593)
+    test_f1          0.5490 +/- 0.0338
+    test_pr_auc      0.5461 +/- 0.0367
+    test_roc_auc     0.8001 +/- 0.0105
+    cv_mean_f1       0.5557 +/- 0.0110
+    cv_mean_pr_auc   0.4914 +/- 0.0177
+
+arch-crnn-BR-BZ-BY-JY  (n=10 seeds: [101, 102, 103, 104, 105, 106, 107, 108, 109, 110], dev=979/143+, test=173/25+, params=1468209)
+    test_f1          0.5523 +/- 0.0489
+    test_pr_auc      0.5402 +/- 0.0531
+    test_roc_auc     0.8347 +/- 0.0164
+    cv_mean_f1       0.5310 +/- 0.0171
+    cv_mean_pr_auc   0.4351 +/- 0.0353
+
+arch-timemil-JY  (n=10 seeds: [101, 102, 103, 104, 105, 106, 107, 108, 109, 110], dev=979/143+, test=173/25+, params=1190161)
+    test_f1          0.4944 +/- 0.0349
+    test_pr_auc      0.4689 +/- 0.0460
+    test_roc_auc     0.7829 +/- 0.0230
+    cv_mean_f1       0.5420 +/- 0.0126
+    cv_mean_pr_auc   0.4611 +/- 0.0143
+
+arch-crnn-JY  (n=10 seeds: [101, 102, 103, 104, 105, 106, 107, 108, 109, 110], dev=979/143+, test=173/25+, params=1467777)
+    test_f1          0.5308 +/- 0.0294
+    test_pr_auc      0.5019 +/- 0.0660
+    test_roc_auc     0.8130 +/- 0.0201
+    cv_mean_f1       0.5247 +/- 0.0099
+    cv_mean_pr_auc   0.4201 +/- 0.0146
+
+labels-include1-JY  (n=10 seeds: [101, 102, 103, 104, 105, 106, 107, 108, 109, 110], dev=1041/205+, test=184/36+, params=1039682)
+    test_f1          0.5656 +/- 0.0210
+    test_pr_auc      0.5820 +/- 0.0263
+    test_roc_auc     0.7994 +/- 0.0067
+    cv_mean_f1       0.5939 +/- 0.0081
+    cv_mean_pr_auc   0.5314 +/- 0.0110
+
+aug-off-JY  (n=10 seeds: [101, 102, 103, 104, 105, 106, 107, 108, 109, 110], dev=979/143+, test=173/25+, params=1039682)
+    test_f1          0.5270 +/- 0.0409
+    test_pr_auc      0.5562 +/- 0.0256
+    test_roc_auc     0.8098 +/- 0.0100
+    cv_mean_f1       0.5625 +/- 0.0117
+    cv_mean_pr_auc   0.4874 +/- 0.0174
+
+aug-on-JY  (n=10 seeds: [101, 102, 103, 104, 105, 106, 107, 108, 109, 110], dev=979/143+, test=173/25+, params=1039682)
+    test_f1          0.5384 +/- 0.0560
+    test_pr_auc      0.5723 +/- 0.0422
+    test_roc_auc     0.8153 +/- 0.0166
+    cv_mean_f1       0.5611 +/- 0.0088
+    cv_mean_pr_auc   0.4895 +/- 0.0216
+
+==========================================================================================
+COMPARISONS
+==========================================================================================
+
+aug-on-JY vs aug-off-JY (paired by seed):
+    test_f1          0.5384 +/- 0.0560  vs  0.5270 +/- 0.0409  delta=+0.0114  paired-t p=0.375 wilcoxon p=0.322
+    test_pr_auc      0.5723 +/- 0.0422  vs  0.5562 +/- 0.0256  delta=+0.0161  paired-t p=0.367 wilcoxon p=0.432
+    test_roc_auc     0.8153 +/- 0.0166  vs  0.8098 +/- 0.0100  delta=+0.0055  paired-t p=0.362 wilcoxon p=0.557
+    cv_mean_f1       0.5611 +/- 0.0088  vs  0.5625 +/- 0.0117  delta=-0.0014  paired-t p=0.698 wilcoxon p=0.695
+
+arch-timemil-JY vs baseline-JY (paired by seed):
+    test_f1          0.4944 +/- 0.0349  vs  0.5276 +/- 0.0515  delta=-0.0332  paired-t p=0.073 wilcoxon p=0.074
+    test_pr_auc      0.4689 +/- 0.0460  vs  0.5370 +/- 0.0360  delta=-0.0680  paired-t p=0.001 wilcoxon p=0.002
+    test_roc_auc     0.7829 +/- 0.0230  vs  0.8051 +/- 0.0182  delta=-0.0222  paired-t p=0.023 wilcoxon p=0.020
+    cv_mean_f1       0.5420 +/- 0.0126  vs  0.5645 +/- 0.0120  delta=-0.0225  paired-t p=0.004 wilcoxon p=0.006
+
+arch-crnn-JY vs baseline-JY (paired by seed):
+    test_f1          0.5308 +/- 0.0294  vs  0.5276 +/- 0.0515  delta=+0.0032  paired-t p=0.865 wilcoxon p=0.922
+    test_pr_auc      0.5019 +/- 0.0660  vs  0.5370 +/- 0.0360  delta=-0.0351  paired-t p=0.114 wilcoxon p=0.084
+    test_roc_auc     0.8130 +/- 0.0201  vs  0.8051 +/- 0.0182  delta=+0.0079  paired-t p=0.300 wilcoxon p=0.375
+    cv_mean_f1       0.5247 +/- 0.0099  vs  0.5645 +/- 0.0120  delta=-0.0398  paired-t p=0.000 wilcoxon p=0.002
+
+arch-timemil-BR-BZ-BY-JY vs channels-BR-BZ-BY-JY (paired by seed):
+    test_f1          0.5490 +/- 0.0338  vs  0.5782 +/- 0.0243  delta=-0.0292  paired-t p=0.094 wilcoxon p=0.131
+    test_pr_auc      0.5461 +/- 0.0367  vs  0.6334 +/- 0.0231  delta=-0.0873  paired-t p=0.000 wilcoxon p=0.002
+    test_roc_auc     0.8001 +/- 0.0105  vs  0.8363 +/- 0.0118  delta=-0.0362  paired-t p=0.000 wilcoxon p=0.002
+    cv_mean_f1       0.5557 +/- 0.0110  vs  0.5845 +/- 0.0125  delta=-0.0288  paired-t p=0.000 wilcoxon p=0.002
+
+arch-crnn-BR-BZ-BY-JY vs channels-BR-BZ-BY-JY (paired by seed):
+    test_f1          0.5523 +/- 0.0489  vs  0.5782 +/- 0.0243  delta=-0.0259  paired-t p=0.081 wilcoxon p=0.049
+    test_pr_auc      0.5402 +/- 0.0531  vs  0.6334 +/- 0.0231  delta=-0.0932  paired-t p=0.000 wilcoxon p=0.004
+    test_roc_auc     0.8347 +/- 0.0164  vs  0.8363 +/- 0.0118  delta=-0.0016  paired-t p=0.704 wilcoxon p=1.000
+    cv_mean_f1       0.5310 +/- 0.0171  vs  0.5845 +/- 0.0125  delta=-0.0535  paired-t p=0.000 wilcoxon p=0.002
+
+channels-BR-BZ vs baseline-JY (paired by seed):
+    test_f1          0.5809 +/- 0.0447  vs  0.5276 +/- 0.0515  delta=+0.0533  paired-t p=0.004 wilcoxon p=0.004
+    test_pr_auc      0.6347 +/- 0.0615  vs  0.5370 +/- 0.0360  delta=+0.0977  paired-t p=0.005 wilcoxon p=0.004
+    test_roc_auc     0.8197 +/- 0.0159  vs  0.8051 +/- 0.0182  delta=+0.0147  paired-t p=0.171 wilcoxon p=0.193
+    cv_mean_f1       0.5884 +/- 0.0120  vs  0.5645 +/- 0.0120  delta=+0.0239  paired-t p=0.000 wilcoxon p=0.002
+
+channels-BR-BZ-BY-JY vs baseline-JY (paired by seed):
+    test_f1          0.5782 +/- 0.0243  vs  0.5276 +/- 0.0515  delta=+0.0506  paired-t p=0.005 wilcoxon p=0.010
+    test_pr_auc      0.6334 +/- 0.0231  vs  0.5370 +/- 0.0360  delta=+0.0964  paired-t p=0.000 wilcoxon p=0.002
+    test_roc_auc     0.8363 +/- 0.0118  vs  0.8051 +/- 0.0182  delta=+0.0312  paired-t p=0.003 wilcoxon p=0.004
+    cv_mean_f1       0.5845 +/- 0.0125  vs  0.5645 +/- 0.0120  delta=+0.0200  paired-t p=0.002 wilcoxon p=0.002
+
+aug-off-JY vs baseline-JY (paired by seed):
+    test_f1          0.5270 +/- 0.0409  vs  0.5276 +/- 0.0515  delta=-0.0006  paired-t p=0.960 wilcoxon p=1.000
+    test_pr_auc      0.5562 +/- 0.0256  vs  0.5370 +/- 0.0360  delta=+0.0192  paired-t p=0.253 wilcoxon p=0.846
+    test_roc_auc     0.8098 +/- 0.0100  vs  0.8051 +/- 0.0182  delta=+0.0048  paired-t p=0.460 wilcoxon p=0.625
+    cv_mean_f1       0.5625 +/- 0.0117  vs  0.5645 +/- 0.0120  delta=-0.0020  paired-t p=0.482 wilcoxon p=0.695
+
+labels-include1-JY vs baseline-JY (UNPAIRED - different test sets):
+    test_f1          0.5656 +/- 0.0210  vs  0.5276 +/- 0.0515  delta=+0.0380  welch-t p=0.052
+    test_pr_auc      0.5820 +/- 0.0263  vs  0.5370 +/- 0.0360  delta=+0.0450  welch-t p=0.006
+    test_roc_auc     0.7994 +/- 0.0067  vs  0.8051 +/- 0.0182  delta=-0.0057  welch-t p=0.375
+    cv_mean_f1       0.5939 +/- 0.0081  vs  0.5645 +/- 0.0120  delta=+0.0294  welch-t p=0.000

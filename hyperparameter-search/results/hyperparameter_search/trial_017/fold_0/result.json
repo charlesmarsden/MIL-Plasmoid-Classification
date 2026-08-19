@@ -1,0 +1,19 @@
+{
+  "best_epoch": 6,
+  "best_metrics": {
+    "accuracy": 0.8348623853211009,
+    "f1": 0.578125,
+    "loss": 0.8730359700758282,
+    "pr_auc": 0.5099301747889103,
+    "precision": 0.4625,
+    "recall": 0.7708333333333334,
+    "roc_auc": 0.8562574671445639,
+    "threshold": 0.44286561012268066
+  },
+  "duration_minutes": 0.4772100607554118,
+  "epochs_completed": 11,
+  "mean": 0.15028226375579834,
+  "parameter_count": 523298,
+  "status": "ok",
+  "std": 0.3300384283065796
+}

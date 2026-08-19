@@ -1,0 +1,21 @@
+{
+  "architecture": "gated_attention",
+  "batch_size": 16,
+  "classifier_multiplier": 0.5,
+  "cnn_backbone": "plain",
+  "cnn_channels": [
+    8,
+    16,
+    32
+  ],
+  "dropout": 0.25,
+  "embed_dim": 64,
+  "learning_rate": 0.0003,
+  "loss_type": "bce",
+  "name": "historical_plain_small",
+  "noise_std": 0.01,
+  "scale_std": 0.0,
+  "scheduler": "plateau",
+  "trial_id": 2,
+  "weight_decay": 1e-05
+}

@@ -1,0 +1,1 @@
+These results were produced by `hyperparameter-search-codes/jy_gated_attention_hyperparameter_search_261us_80frames_1us_augmented.py`, whose hardcoded `OUTPUT_DIR` no longer points here after this directory was reorganised.

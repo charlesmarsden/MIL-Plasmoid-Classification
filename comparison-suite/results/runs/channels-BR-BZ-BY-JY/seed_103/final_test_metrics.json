@@ -1,0 +1,69 @@
+{
+  "best_config": {
+    "architecture": "gated_attention",
+    "batch_size": 8,
+    "classifier_multiplier": 1.0,
+    "cnn_backbone": "plain",
+    "cnn_channels": [
+      16,
+      32,
+      64
+    ],
+    "dropout": 0.3,
+    "embed_dim": 128,
+    "learning_rate": 0.0001,
+    "loss_type": "bce",
+    "name": "channels-BR-BZ-BY-JY",
+    "scheduler": "cosine",
+    "weight_decay": 0.001
+  },
+  "best_validation_epoch": 4,
+  "best_validation_metrics": {
+    "accuracy": 0.9017341040462428,
+    "f1": 0.6530612244897959,
+    "loss": 0.3319331021471457,
+    "pr_auc": 0.6267567534158693,
+    "precision": 0.6666666666666666,
+    "recall": 0.64,
+    "roc_auc": 0.8997297297297296,
+    "threshold": 0.1417900174856186
+  },
+  "channels": [
+    "BR",
+    "BZ",
+    "BY",
+    "JY"
+  ],
+  "checkpoint": "/scratch/gpfs/cm0902/PPPL/Advanced-Plasmoid-Classification/Image-Data/TimeMIL-output/paper_comparison_suite/runs/channels-BR-BZ-BY-JY/seed_103/best_hypersearch_model.pth",
+  "normalization_mean": [
+    6.148378849029541,
+    -49.24021530151367,
+    -47.723236083984375,
+    0.14748208224773407
+  ],
+  "normalization_std": [
+    151.2913360595703,
+    268.19610595703125,
+    161.95526123046875,
+    0.3340749144554138
+  ],
+  "requested_num_frames": 80,
+  "requested_sampling_step_us": 1.0,
+  "requested_time_end_us": 340.0,
+  "requested_time_start_us": 261.0,
+  "test_metrics": {
+    "accuracy": 0.8728323699421965,
+    "f1": 0.5769230769230769,
+    "loss": 0.38848225501450623,
+    "pr_auc": 0.6497017952140289,
+    "precision": 0.5555555555555556,
+    "recall": 0.6,
+    "roc_auc": 0.83,
+    "threshold": 0.1417900174856186
+  },
+  "time_step_us": 1.0,
+  "time_window_us": [
+    261.0,
+    340.0
+  ]
+}

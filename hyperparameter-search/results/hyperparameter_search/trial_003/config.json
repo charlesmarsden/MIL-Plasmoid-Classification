@@ -1,0 +1,21 @@
+{
+  "architecture": "gated_attention",
+  "batch_size": 16,
+  "classifier_multiplier": 0.5,
+  "cnn_backbone": "plain",
+  "cnn_channels": [
+    24,
+    48,
+    96
+  ],
+  "dropout": 0.1,
+  "embed_dim": 256,
+  "learning_rate": 3e-05,
+  "loss_type": "bce",
+  "name": "historical_best_pr_auc",
+  "noise_std": 0.0,
+  "scale_std": 0.03,
+  "scheduler": "plateau",
+  "trial_id": 3,
+  "weight_decay": 1e-05
+}

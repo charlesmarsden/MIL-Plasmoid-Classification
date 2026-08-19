@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+
+# Trained model checkpoints - regeneratable from code, not meant to live in git history
+*.pth
+
+.DS_Store

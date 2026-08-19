@@ -1,0 +1,417 @@
+PyTorch: 2.8.0+cu128
+Device: cuda
+GPU: NVIDIA A100-SXM4-80GB
+Budget: trials=24, folds=3, max_epochs=20, patience=5, primary_metric=f1, num_workers=0
+Results directory: /workspace/PPPL/Advanced-Plasmoid-Classification/Image-Data/TimeMIL-output/JY_261us_80frames_1us_gated_augmented/hyperparameter_search
+Dataset: 3456 samples from 1152 physical shots, augmented=2304, positive shots=168, field=JY, field shape=(80, 48, 42)
+Label policy: scores 2/3 are positive; excluded 73 confidence-1 shots.
+Selected time sampling: start=261 us, end=340 us, frames=80, step=1 us, source T unit=seconds
+Estimated windowed field cache: 2.08 GiB
+Preloading windowed JY sequences into RAM...
+  loaded 100/3456 shots
+  loaded 200/3456 shots
+  loaded 300/3456 shots
+  loaded 400/3456 shots
+  loaded 500/3456 shots
+  loaded 600/3456 shots
+  loaded 700/3456 shots
+  loaded 800/3456 shots
+  loaded 900/3456 shots
+  loaded 1000/3456 shots
+  loaded 1100/3456 shots
+  loaded 1200/3456 shots
+  loaded 1300/3456 shots
+  loaded 1400/3456 shots
+  loaded 1500/3456 shots
+  loaded 1600/3456 shots
+  loaded 1700/3456 shots
+  loaded 1800/3456 shots
+  loaded 1900/3456 shots
+  loaded 2000/3456 shots
+  loaded 2100/3456 shots
+  loaded 2200/3456 shots
+  loaded 2300/3456 shots
+  loaded 2400/3456 shots
+  loaded 2500/3456 shots
+  loaded 2600/3456 shots
+  loaded 2700/3456 shots
+  loaded 2800/3456 shots
+  loaded 2900/3456 shots
+  loaded 3000/3456 shots
+  loaded 3100/3456 shots
+  loaded 3200/3456 shots
+  loaded 3300/3456 shots
+  loaded 3400/3456 shots
+  loaded 3456/3456 shots
+Preload completed in 17.1 minutes.
+Development/test split: 979/173 shots; test positives=25. The test set will not be used during the search.
+Loaded existing search plan with 24 trials.
+
+########################################################################################
+Trial 1/24: historical_best_f1 | architecture=gated_attention backbone=plain channels=[16, 32, 64] embed_dim=128 dropout=0.3 lr=0.0001
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 2/24: historical_residual_small | architecture=gated_attention backbone=residual channels=[8, 16, 32] embed_dim=64 dropout=0.5 lr=0.0003
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 3/24: historical_plain_small | architecture=gated_attention backbone=plain channels=[8, 16, 32] embed_dim=64 dropout=0.25 lr=0.0003
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 4/24: historical_best_pr_auc | architecture=gated_attention backbone=plain channels=[24, 48, 96] embed_dim=256 dropout=0.1 lr=3e-05
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 5/24: focused_random_000 | architecture=gated_attention backbone=plain channels=[8, 16, 32] embed_dim=64 dropout=0.25 lr=0.0003
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 6/24: focused_random_001 | architecture=gated_attention backbone=plain channels=[8, 16, 32] embed_dim=128 dropout=0.3 lr=0.0001
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 7/24: focused_random_002 | architecture=gated_attention backbone=residual channels=[16, 32, 64] embed_dim=64 dropout=0.1 lr=0.0003
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 8/24: focused_random_003 | architecture=gated_attention backbone=residual channels=[16, 32, 64] embed_dim=256 dropout=0.3 lr=0.0003
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 9/24: focused_random_004 | architecture=gated_attention backbone=plain channels=[16, 32, 64] embed_dim=128 dropout=0.25 lr=0.0001
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 10/24: focused_random_005 | architecture=gated_attention backbone=residual channels=[16, 32, 64] embed_dim=128 dropout=0.4 lr=0.0003
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 11/24: focused_random_006 | architecture=gated_attention backbone=residual channels=[16, 32, 64] embed_dim=128 dropout=0.3 lr=0.0003
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 12/24: focused_random_007 | architecture=gated_attention backbone=plain channels=[8, 16, 32] embed_dim=256 dropout=0.3 lr=3e-05
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 13/24: focused_random_008 | architecture=gated_attention backbone=residual channels=[16, 32, 64] embed_dim=256 dropout=0.5 lr=3e-05
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 14/24: focused_random_009 | architecture=gated_attention backbone=plain channels=[24, 48, 96] embed_dim=256 dropout=0.25 lr=0.0001
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 15/24: focused_random_010 | architecture=gated_attention backbone=residual channels=[16, 32, 64] embed_dim=128 dropout=0.3 lr=3e-05
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 16/24: focused_random_011 | architecture=gated_attention backbone=residual channels=[24, 48, 96] embed_dim=64 dropout=0.3 lr=3e-05
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 17/24: focused_random_012 | architecture=gated_attention backbone=plain channels=[8, 16, 32] embed_dim=128 dropout=0.4 lr=0.0001
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 18/24: focused_random_013 | architecture=gated_attention backbone=plain channels=[16, 32, 64] embed_dim=64 dropout=0.25 lr=3e-05
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 19/24: focused_random_014 | architecture=gated_attention backbone=plain channels=[8, 16, 32] embed_dim=256 dropout=0.3 lr=0.0001
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+Fold 3/3 already complete; skipping.
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 20/24: focused_random_015 | architecture=gated_attention backbone=residual channels=[16, 32, 64] embed_dim=256 dropout=0.1 lr=0.0001
+########################################################################################
+Fold 1/3 already complete; skipping.
+Fold 2/3 already complete; skipping.
+
+Fold 3/3: train=1959 samples from 653 shots, val=326 original shots mean=0.1485467 std=0.3391299
+epoch=01 train_loss=0.3756 val_loss=0.3780 PR_AUC=0.3774 ROC_AUC=0.7942 F1=0.4854 P=0.4545 R=0.5208 threshold=0.3045
+epoch=02 train_loss=0.3149 val_loss=0.3862 PR_AUC=0.4280 ROC_AUC=0.8094 F1=0.4868 P=0.3558 R=0.7708 threshold=0.0705
+epoch=03 train_loss=0.2918 val_loss=0.4103 PR_AUC=0.4065 ROC_AUC=0.7956 F1=0.4713 P=0.3394 R=0.7708 threshold=0.0599
+epoch=04 train_loss=0.2655 val_loss=0.3959 PR_AUC=0.4486 ROC_AUC=0.8087 F1=0.4583 P=0.3438 R=0.6875 threshold=0.0824
+epoch=05 train_loss=0.2456 val_loss=0.4184 PR_AUC=0.4416 ROC_AUC=0.8045 F1=0.4815 P=0.4333 R=0.5417 threshold=0.2066
+epoch=06 train_loss=0.1937 val_loss=0.4676 PR_AUC=0.4252 ROC_AUC=0.7908 F1=0.4691 P=0.5758 R=0.3958 threshold=0.7708
+epoch=07 train_loss=0.1524 val_loss=0.5762 PR_AUC=0.4008 ROC_AUC=0.7827 F1=0.4468 P=0.4565 R=0.4375 threshold=0.7570
+Early stopping at epoch 7; best f1 was 0.4868 at epoch 2.
+Fold complete: best_epoch=2 f1=0.4868 PR_AUC=0.4280 duration=20.4 min
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 21/24: focused_random_016 | architecture=gated_attention backbone=plain channels=[24, 48, 96] embed_dim=128 dropout=0.5 lr=0.0001
+########################################################################################
+
+Fold 1/3: train=1956 samples from 652 shots, val=327 original shots mean=0.1502823 std=0.3300384
+epoch=01 train_loss=1.2975 val_loss=0.8451 PR_AUC=0.4807 ROC_AUC=0.8433 F1=0.5455 P=0.4839 R=0.6250 threshold=0.6959
+epoch=02 train_loss=1.0019 val_loss=0.8418 PR_AUC=0.4760 ROC_AUC=0.8446 F1=0.5600 P=0.4118 R=0.8750 threshold=0.5882
+epoch=03 train_loss=0.9760 val_loss=0.8068 PR_AUC=0.4544 ROC_AUC=0.8526 F1=0.5594 P=0.4211 R=0.8333 threshold=0.4692
+epoch=04 train_loss=0.8968 val_loss=0.7980 PR_AUC=0.4694 ROC_AUC=0.8563 F1=0.5616 P=0.4184 R=0.8542 threshold=0.5526
+epoch=05 train_loss=0.9258 val_loss=0.8269 PR_AUC=0.4870 ROC_AUC=0.8579 F1=0.5410 P=0.4459 R=0.6875 threshold=0.5702
+epoch=06 train_loss=0.8362 val_loss=0.9337 PR_AUC=0.4875 ROC_AUC=0.8557 F1=0.5323 P=0.4342 R=0.6875 threshold=0.4032
+epoch=07 train_loss=0.8197 val_loss=0.8156 PR_AUC=0.5228 ROC_AUC=0.8581 F1=0.5410 P=0.4459 R=0.6875 threshold=0.6983
+epoch=08 train_loss=0.7229 val_loss=1.0040 PR_AUC=0.5328 ROC_AUC=0.8509 F1=0.5197 P=0.4177 R=0.6875 threshold=0.4074
+epoch=09 train_loss=0.7076 val_loss=1.0216 PR_AUC=0.5191 ROC_AUC=0.8328 F1=0.5167 P=0.4306 R=0.6458 threshold=0.4454
+Early stopping at epoch 9; best f1 was 0.5616 at epoch 4.
+Fold complete: best_epoch=4 f1=0.5616 PR_AUC=0.4694 duration=26.1 min
+
+Fold 2/3: train=1959 samples from 653 shots, val=326 original shots mean=0.1458435 std=0.3371958
+epoch=01 train_loss=1.4504 val_loss=0.8383 PR_AUC=0.6828 ROC_AUC=0.8934 F1=0.6346 P=0.5789 R=0.7021 threshold=0.5584
+epoch=02 train_loss=1.0362 val_loss=0.8479 PR_AUC=0.6921 ROC_AUC=0.9011 F1=0.6458 P=0.6327 R=0.6596 threshold=0.5021
+epoch=03 train_loss=0.9711 val_loss=0.7177 PR_AUC=0.6768 ROC_AUC=0.9030 F1=0.6504 P=0.5263 R=0.8511 threshold=0.7171
+epoch=04 train_loss=0.9111 val_loss=0.7236 PR_AUC=0.6911 ROC_AUC=0.8953 F1=0.6226 P=0.5593 R=0.7021 threshold=0.7776
+epoch=05 train_loss=0.8806 val_loss=0.9653 PR_AUC=0.6021 ROC_AUC=0.8832 F1=0.6055 P=0.5323 R=0.7021 threshold=0.3437
+epoch=06 train_loss=0.8525 val_loss=0.7903 PR_AUC=0.6407 ROC_AUC=0.8873 F1=0.5979 P=0.5800 R=0.6170 threshold=0.6298
+epoch=07 train_loss=0.7595 val_loss=0.7880 PR_AUC=0.6590 ROC_AUC=0.8938 F1=0.6207 P=0.6750 R=0.5745 threshold=0.7813
+epoch=08 train_loss=0.7586 val_loss=0.7988 PR_AUC=0.6316 ROC_AUC=0.8841 F1=0.6139 P=0.5741 R=0.6596 threshold=0.6072
+Early stopping at epoch 8; best f1 was 0.6504 at epoch 3.
+Fold complete: best_epoch=3 f1=0.6504 PR_AUC=0.6768 duration=23.3 min
+
+Fold 3/3: train=1959 samples from 653 shots, val=326 original shots mean=0.1485467 std=0.3391299
+epoch=01 train_loss=1.2524 val_loss=1.0349 PR_AUC=0.4110 ROC_AUC=0.8168 F1=0.5031 P=0.3565 R=0.8542 threshold=0.2475
+epoch=02 train_loss=0.9854 val_loss=1.0866 PR_AUC=0.4165 ROC_AUC=0.8005 F1=0.4923 P=0.3902 R=0.6667 threshold=0.4098
+epoch=03 train_loss=0.8954 val_loss=0.9250 PR_AUC=0.4277 ROC_AUC=0.8160 F1=0.5088 P=0.4394 R=0.6042 threshold=0.6315
+epoch=04 train_loss=0.8206 val_loss=1.0521 PR_AUC=0.4163 ROC_AUC=0.8180 F1=0.5175 P=0.3895 R=0.7708 threshold=0.3719
+epoch=05 train_loss=0.8314 val_loss=1.0336 PR_AUC=0.4108 ROC_AUC=0.8207 F1=0.5031 P=0.3565 R=0.8542 threshold=0.4763
+epoch=06 train_loss=0.8586 val_loss=1.2630 PR_AUC=0.4463 ROC_AUC=0.8133 F1=0.4724 P=0.3797 R=0.6250 threshold=0.3194
+epoch=07 train_loss=0.7772 val_loss=1.0131 PR_AUC=0.4325 ROC_AUC=0.8245 F1=0.5185 P=0.4023 R=0.7292 threshold=0.4288
+epoch=08 train_loss=0.6543 val_loss=1.7891 PR_AUC=0.4160 ROC_AUC=0.7998 F1=0.5000 P=0.4265 R=0.6042 threshold=0.1698
+epoch=09 train_loss=0.6312 val_loss=1.7415 PR_AUC=0.4247 ROC_AUC=0.7985 F1=0.4956 P=0.4308 R=0.5833 threshold=0.2461
+epoch=10 train_loss=0.6011 val_loss=1.9412 PR_AUC=0.3890 ROC_AUC=0.7662 F1=0.4500 P=0.3750 R=0.5625 threshold=0.1979
+epoch=11 train_loss=0.5013 val_loss=1.6499 PR_AUC=0.3968 ROC_AUC=0.7982 F1=0.5000 P=0.4079 R=0.6458 threshold=0.5275
+epoch=12 train_loss=0.4353 val_loss=2.4276 PR_AUC=0.3646 ROC_AUC=0.7784 F1=0.4510 P=0.4259 R=0.4792 threshold=0.3561
+Early stopping at epoch 12; best f1 was 0.5185 at epoch 7.
+Fold complete: best_epoch=7 f1=0.5185 PR_AUC=0.4325 duration=34.4 min
+
+Current top configurations:
+ trial_id                   name  mean_f1   std_f1  mean_pr_auc  std_pr_auc    architecture  embed_dim  dropout  learning_rate
+        8     focused_random_004 0.589526 0.074856     0.512607    0.148899 gated_attention        128     0.25        0.00010
+       13     focused_random_009 0.585093 0.044391     0.509194    0.091193 gated_attention        256     0.25        0.00010
+       17     focused_random_013 0.582237 0.054997     0.532681    0.101044 gated_attention         64     0.25        0.00003
+       16     focused_random_012 0.579370 0.058318     0.495617    0.152461 gated_attention        128     0.40        0.00010
+        3 historical_best_pr_auc 0.579338 0.059429     0.495223    0.079967 gated_attention        256     0.10        0.00003
+
+########################################################################################
+Trial 22/24: focused_random_017 | architecture=gated_attention backbone=plain channels=[8, 16, 32] embed_dim=128 dropout=0.1 lr=0.0001
+########################################################################################
+
+Fold 1/3: train=1956 samples from 652 shots, val=327 original shots mean=0.1502823 std=0.3300384
