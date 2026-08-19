@@ -8,6 +8,7 @@ It contains two folders:
 
 1. `hyperparameter-search/` — code and results pertaining to the hyperparameter search outlined in section 3.4 'Hyperparameter search'.
 2. `comparison-suite/` — code and results pertaining to our experiments with architecture, input data, among other variables discussed in Section 4 'Model testing'.
+3. `Interpretability/` - code and results pertaining to the MIL model attention-based temporal localization of plasmoids
 
 Please note that while several files have a "hyperparameter_search" in their name, these were not run as searches for the purposes of this paper. They were preliminary searches to get a better understanding of the data and models, and are reused as libraries from which the comparison suite imports model classes, data stores, and training machinery/engines. Only `hyperparameter-search/jy_gated_attention_...` was actually run as a search.
 
