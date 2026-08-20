@@ -18,7 +18,7 @@ Also note that we initially sought to include a transformer-based order-aware ar
 
 ## hyperparameter-search/
 
-`jy_gated_attention_hyperparameter_search_261us_80frames_1us_augmented.py`
+### `jy_gated_attention_hyperparameter_search_261us_80frames_1us_augmented.py`
 **The hyperparameter search (primary paper result)**
 Gated-attention MIL with offline-augmented JY field images (261 us start, 1 us step, 80 frames; offline-augmented data included only in training sets). Random search over CNN backbone/widths, embedding dim, attention dim, dropout, learning rate, weight decay, batch size, loss weighting, scheduler, and online noise/scale augmentation. We used a 15% held-out test split (random_state=42) with stratified 3-fold CV on the remaining 85%.
 
