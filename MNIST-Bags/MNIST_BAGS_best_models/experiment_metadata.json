@@ -1,0 +1,87 @@
+{
+  "dataset_summary": {
+    "test": {
+      "bags": 1000,
+      "max_bag_length": 17,
+      "mean_bag_length": 9.896,
+      "min_bag_length": 4,
+      "negatives": 500,
+      "positives": 500,
+      "std_bag_length": 2.0584997987421376
+    },
+    "train": {
+      "bags": 500,
+      "max_bag_length": 16,
+      "mean_bag_length": 10.012,
+      "min_bag_length": 4,
+      "negatives": 250,
+      "positives": 250,
+      "std_bag_length": 1.9818454588705174
+    },
+    "validation": {
+      "bags": 250,
+      "max_bag_length": 16,
+      "mean_bag_length": 9.936,
+      "min_bag_length": 4,
+      "negatives": 125,
+      "positives": 125,
+      "std_bag_length": 2.0854978314108306
+    }
+  },
+  "mnist_normalization_mean": 0.1307,
+  "mnist_normalization_std": 0.3081,
+  "models": [
+    {
+      "architecture": "gated_attention",
+      "batch_size": 8,
+      "classifier_multiplier": 1.0,
+      "cnn_backbone": "plain",
+      "cnn_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout": 0.3,
+      "embed_dim": 128,
+      "heads": 8,
+      "learning_rate": 0.0001,
+      "loss_type": "bce",
+      "name": "best_gated_attention",
+      "noise_std": 0.0,
+      "num_landmarks": 64,
+      "scale_std": 0.0,
+      "scheduler": "cosine",
+      "timemil_layers": 2,
+      "weight_decay": 0.001
+    },
+    {
+      "architecture": "timemil",
+      "batch_size": 8,
+      "classifier_multiplier": 0.5,
+      "cnn_backbone": "residual",
+      "cnn_channels": [
+        16,
+        32,
+        64
+      ],
+      "dropout": 0.25,
+      "embed_dim": 128,
+      "heads": 4,
+      "learning_rate": 0.0003,
+      "loss_type": "weighted_bce",
+      "name": "best_timemil",
+      "noise_std": 0.0,
+      "num_landmarks": 64,
+      "scale_std": 0.07,
+      "scheduler": "none",
+      "timemil_layers": 1,
+      "weight_decay": 0.01
+    }
+  ],
+  "num_workers": 4,
+  "nystrom_implementation": "models.nystrom_attention",
+  "requested_bag_length_std": 2.0,
+  "requested_mean_bag_length": 10.0,
+  "seed": 42,
+  "target_digit": 9
+}

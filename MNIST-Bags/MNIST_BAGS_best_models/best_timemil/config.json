@@ -1,0 +1,23 @@
+{
+  "architecture": "timemil",
+  "batch_size": 8,
+  "classifier_multiplier": 0.5,
+  "cnn_backbone": "residual",
+  "cnn_channels": [
+    16,
+    32,
+    64
+  ],
+  "dropout": 0.25,
+  "embed_dim": 128,
+  "heads": 4,
+  "learning_rate": 0.0003,
+  "loss_type": "weighted_bce",
+  "name": "best_timemil",
+  "noise_std": 0.0,
+  "num_landmarks": 64,
+  "scale_std": 0.07,
+  "scheduler": "none",
+  "timemil_layers": 1,
+  "weight_decay": 0.01
+}

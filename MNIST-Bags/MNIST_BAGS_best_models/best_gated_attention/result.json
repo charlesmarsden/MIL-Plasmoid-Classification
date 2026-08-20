@@ -1,0 +1,58 @@
+{
+  "architecture": "gated_attention",
+  "best_validation_epoch": 13,
+  "best_validation_metrics": {
+    "accuracy": 0.964,
+    "f1": 0.963855421686747,
+    "fn": 5,
+    "fp": 4,
+    "loss": 0.18448198584330974,
+    "pr_auc": 0.9901903389292119,
+    "precision": 0.967741935483871,
+    "recall": 0.96,
+    "roc_auc": 0.989376,
+    "threshold": 0.4807763695716858,
+    "tn": 121,
+    "tp": 120
+  },
+  "config": {
+    "architecture": "gated_attention",
+    "batch_size": 8,
+    "classifier_multiplier": 1.0,
+    "cnn_backbone": "plain",
+    "cnn_channels": [
+      16,
+      32,
+      64
+    ],
+    "dropout": 0.3,
+    "embed_dim": 128,
+    "heads": 8,
+    "learning_rate": 0.0001,
+    "loss_type": "bce",
+    "name": "best_gated_attention",
+    "noise_std": 0.0,
+    "num_landmarks": 64,
+    "scale_std": 0.0,
+    "scheduler": "cosine",
+    "timemil_layers": 2,
+    "weight_decay": 0.001
+  },
+  "duration_minutes": 0.19811561902364094,
+  "model": "best_gated_attention",
+  "parameter_count": 458050,
+  "test_metrics": {
+    "accuracy": 0.935,
+    "f1": 0.9341438703140831,
+    "fn": 39,
+    "fp": 26,
+    "loss": 0.30078082856221,
+    "pr_auc": 0.9826217640018867,
+    "precision": 0.946611909650924,
+    "recall": 0.922,
+    "roc_auc": 0.978862,
+    "threshold": 0.4807763695716858,
+    "tn": 474,
+    "tp": 461
+  }
+}

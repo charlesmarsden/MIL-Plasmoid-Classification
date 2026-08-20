@@ -1,0 +1,58 @@
+{
+  "architecture": "timemil",
+  "best_validation_epoch": 18,
+  "best_validation_metrics": {
+    "accuracy": 0.864,
+    "f1": 0.8521739130434782,
+    "fn": 27,
+    "fp": 7,
+    "loss": 1.0036545840888749,
+    "pr_auc": 0.9276896180039259,
+    "precision": 0.9333333333333333,
+    "recall": 0.784,
+    "roc_auc": 0.9027839999999999,
+    "threshold": 0.28724297881126404,
+    "tn": 118,
+    "tp": 98
+  },
+  "config": {
+    "architecture": "timemil",
+    "batch_size": 8,
+    "classifier_multiplier": 0.5,
+    "cnn_backbone": "residual",
+    "cnn_channels": [
+      16,
+      32,
+      64
+    ],
+    "dropout": 0.25,
+    "embed_dim": 128,
+    "heads": 4,
+    "learning_rate": 0.0003,
+    "loss_type": "weighted_bce",
+    "name": "best_timemil",
+    "noise_std": 0.0,
+    "num_landmarks": 64,
+    "scale_std": 0.07,
+    "scheduler": "none",
+    "timemil_layers": 1,
+    "weight_decay": 0.01
+  },
+  "duration_minutes": 0.7152923782666524,
+  "model": "best_timemil",
+  "parameter_count": 570229,
+  "test_metrics": {
+    "accuracy": 0.812,
+    "f1": 0.7982832618025751,
+    "fn": 128,
+    "fp": 60,
+    "loss": 1.2467223567753059,
+    "pr_auc": 0.8923901868200085,
+    "precision": 0.8611111111111112,
+    "recall": 0.744,
+    "roc_auc": 0.874684,
+    "threshold": 0.28724297881126404,
+    "tn": 440,
+    "tp": 372
+  }
+}
