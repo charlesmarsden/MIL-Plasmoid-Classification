@@ -1,6 +1,6 @@
 # Paper code and results
 
-This repository contains the Python code needed to reproduce our results, as well as the results we obtained and the sbtach script used to run `paper_comparison_suite.py` on the Stellar Cluster at Princeton Research Computing. Our paper can be found at
+This repository contains the Python code needed to reproduce our results, as well as the results we obtained and the sbtach script used to run `paper_comparison_suite.py` on the Stellar cluster at Princeton Research Computing. Our paper can be found at
 
 arXiv/publication LINK.
 
