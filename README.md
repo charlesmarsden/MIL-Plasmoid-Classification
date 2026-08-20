@@ -92,6 +92,10 @@ The purpose of this part of our work is to demonstrate the utility of the inhere
 
 ---
 
+## MNIST-Bags/
+
+The MNIST dataset is a collection of tens of thousands of hand-written digits, commonly used for computer vision tasks and as a benchmark dataset for comparing model performance. The MNIST-BAGS dataset is an adaptation of this for multiple instance learning problems. This code trains the best gated attention and best TimeMIL configurations found in a preliminary JY hyperparameter search. The goal was to see if the model could perform well on a standard MIL task, which would indicate that the model itself is not the primary cause for concern if FLARE-related tasks prove unsuccessful. The folder contains the code and (good) results on the MNIST task.
+
 ## Reproducibility note
 
 - The suite's `sys.path` setup still assumes the original
