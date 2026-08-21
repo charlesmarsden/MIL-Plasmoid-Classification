@@ -10,6 +10,7 @@ It contains four folders:
 2. `comparison-suite/` — code and results pertaining to our experiments with architecture, input data, among other variables discussed in section 4 'Model testing'.
 3. `Interpretability/` - code and results pertaining to the MIL model attention-based temporal localization of plasmoids as discussed in section 6 'Interpretability'.
 4. `MNIST-Bags/` - code and results pertaining to the gated-attention MIL model check we did in section 3.5 'MNIST-Bags'.
+5. `Labels/` - csv file containing confidence scores and labels for each shot in our dataset.
 
 Please note that while several files have a "hyperparameter_search" in their name, these were not run as searches for the purposes of this paper. They were preliminary searches to get a better understanding of the data and models, and are reused as libraries from which the comparison suite imports model classes, data stores, and training machinery/engines. Only `hyperparameter-search/jy_gated_attention_...` was actually run as a search.
 
@@ -101,7 +102,7 @@ The MNIST dataset is a collection of tens of thousands of hand-written digits, c
 
 ## Labels/
 
-Contains manifest for the image data. The csv file has columns: `Shot`, `path`, `is_plasmoid` (the 0-3 confidence score), `label` ({0,1})
+Contains manifest for the image data. The csv file has columns: `Shot`, `path`, `is_plasmoid` (the 0-3 confidence score), `label` ({0,1}).
 
 ---
 
