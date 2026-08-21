@@ -4,7 +4,7 @@ This repository contains the Python code needed to reproduce our results, as wel
 
 arXiv/publication LINK.
 
-It contains four folders:
+It contains five folders:
 
 1. `hyperparameter-search/` — code and results pertaining to the hyperparameter search outlined in section 3.4 'Hyperparameter search'.
 2. `comparison-suite/` — code and results pertaining to our experiments with architecture, input data, among other variables discussed in section 4 'Model testing'.
