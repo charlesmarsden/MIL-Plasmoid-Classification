@@ -19,7 +19,7 @@ The script:
      recall, F1, threshold, and confusion-matrix counts
   6. saves histories, predictions, checkpoints, and a comparison JSON/CSV
 
-MNIST-BAGS protocol used here:
+MNIST-Bags setup:
   - target instance: digit 9
   - a bag is positive iff it contains at least one 9
   - bag lengths are drawn from Gaussian with mean 10 and std 2
