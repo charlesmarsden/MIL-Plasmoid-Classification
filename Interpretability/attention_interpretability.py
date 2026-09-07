@@ -315,14 +315,14 @@ def plot_attention_scores(data=None, npz_path=None, shot=None, shots=None, categ
     return fig, ax
 
 
-# ============================================================================
+#============================================================================
 # Raw field-frame grids (low- vs high-attention frame content)
 
 FIELD_PLOT_CONFIGS = {
-    "BY": {"label": "BY", "unit": "G", "coe": 1e4, "cmap": "RdBu_r", "clim": (-150, 150)},
+    "BY": {"label": "BY", "unit": "G", "coe": 1e4, "cmap": "RdBu_r", "clim": (-500, 500)},
     "JY": {"label": "-JY", "unit": r"$MA/m^2$", "coe": -1e-6, "cmap": "BrBG", "clim": (-1.25, 1.25)},
     "BR": {"label": "BR", "unit": "G", "coe": 1e4, "cmap": "RdBu_r", "clim": (-150, 150)},
-    "BZ": {"label": "BZ", "unit": "G", "coe": 1e4, "cmap": "RdBu_r", "clim": (-150, 150)},
+    "BZ": {"label": "BZ", "unit": "G", "coe": 1e4, "cmap": "RdBu_r", "clim": (-600, 600)},
 }
 
 
@@ -393,10 +393,11 @@ def _draw_frame_panel(ax, frame, R, Z, channel, use_contour):
     if use_contour:
         mesh = ax.contourf(Z, R, frame, cmap=conf["cmap"], levels=21,
                             vmin=conf["clim"][0], vmax=conf["clim"][1])
-        ax.set_aspect("equal")
     else:
-        mesh = ax.pcolormesh(R, Z, frame.T, shading="auto", cmap=conf["cmap"],
+        # Z on x / R on y: horizontal panel orientation (Z span 41cm > R span 23.5cm)
+        mesh = ax.pcolormesh(Z, R, frame, shading="auto", cmap=conf["cmap"],
                               vmin=conf["clim"][0], vmax=conf["clim"][1])
+    ax.set_aspect("equal")
     ax.set_xticks([])
     ax.set_yticks([])
     return mesh
@@ -437,7 +438,7 @@ def plot_shot_multichannel_frame_grid(shot, high_start_frame, low_start_frame=0,
     """4 rows (one per channel) x (n_frames left + gap + n_frames right) columns"""
     gap_column = n_frames
     width_ratios = [1] * n_frames + [gap_width_ratio] + [1] * n_frames
-    fig, axes = plt.subplots(len(channels), 2 * n_frames + 1, figsize=(1.4 * (2 * n_frames + 1), 1.6 * len(channels)),
+    fig, axes = plt.subplots(len(channels), 2 * n_frames + 1, figsize=(2.2 * (2 * n_frames + 1), 1.3 * len(channels)),
                               dpi=150, gridspec_kw={"width_ratios": width_ratios})
 
     for row, channel in enumerate(channels):
