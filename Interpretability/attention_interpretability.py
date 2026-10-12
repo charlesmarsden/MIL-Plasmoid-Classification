@@ -465,7 +465,8 @@ def plot_shot_multichannel_frame_grid(shot, high_start_frame, low_start_frame=0,
         axes[row, gap_column].axis("off") # the gap itself carries no plot
 
         mesh = None
-        for side, start_frame in enumerate([low_start_frame, high_start_frame]):
+        # high-attention frames on the left, low-attention on the right
+        for side, start_frame in enumerate([high_start_frame, low_start_frame]):
             indices = frame_range_indices(start_frame, n_frames, frame_stride_us)
             column_offset = 0 if side == 0 else gap_column + 1
             for column, frame_index in enumerate(indices):
