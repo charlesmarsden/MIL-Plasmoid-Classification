@@ -225,7 +225,7 @@ def plot_attention_scores(data=None, npz_path=None, shot=None, shots=None, categ
                            show_mean=True, title=None, show_title=False, output_path=None, ax=None,
                            low_start_frame=None, high_start_frame=None, n_frames=None, frame_stride_us=2.0):
     """
-    Plots attention weight vs frame number (zero-indexed) for one or more held-out test shots.
+    Plots attention weight vs frame time (us) for one or more held-out test shots.
 
     Exactly one of `shot` (a single shot number), `shots` (an iterable of shot numbers,
     overlaid as individual lines), or `category` (one of 'tp'/'fp'/'fn'/'tn'/'all', must be given.
@@ -239,7 +239,7 @@ def plot_attention_scores(data=None, npz_path=None, shot=None, shots=None, categ
     if sum(selectors) != 1:
         raise ValueError("Pass exactly one of shot=, shots=, or category=.")
 
-    frame_numbers = np.arange(data["attention_weights"].shape[1])
+    frame_times = np.asarray(data["frame_times_us"], dtype=np.float64)
     shot_to_index = {int(value): index for index, value in enumerate(data["shots"])}
 
     if ax is None:
@@ -259,8 +259,10 @@ def plot_attention_scores(data=None, npz_path=None, shot=None, shots=None, categ
             if start_frame is None:
                 continue
             end_frame = start_frame + stride * (n_frames - 1)
-            # +/-0.5 centers the shaded span on the discrete frame markers at its edges.
-            ax.axvspan(start_frame - 0.5, end_frame + 0.5, color=color, alpha=0.15, label=region_label)
+            # +/- half a frame step centers the shaded span on the discrete frame markers at its edges.
+            half_step = engine.TIME_STEP_US / 2.0
+            ax.axvspan(frame_times[start_frame] - half_step, frame_times[end_frame] + half_step,
+                       color=color, alpha=0.15, label=region_label)
 
     if category is not None:
         if category == "all":
@@ -274,13 +276,13 @@ def plot_attention_scores(data=None, npz_path=None, shot=None, shots=None, categ
         curves = np.stack([data["attention_weights"][shot_to_index[value]] for value in shots_to_plot])
         for curve in curves:
             # unmarked: with many overlaid shots, per-frame markers here would just clutter the plot.
-            ax.plot(frame_numbers, curve, color="tab:blue", alpha=0.15, linewidth=0.8)
+            ax.plot(frame_times, curve, color="tab:blue", alpha=0.15, linewidth=0.8)
         if show_mean:
             mean_curve = curves.mean(axis=0)
             std_curve = curves.std(axis=0)
-            ax.plot(frame_numbers, mean_curve, marker="o", markersize=3, color="tab:blue", linewidth=2.2,
+            ax.plot(frame_times, mean_curve, marker="o", markersize=3, color="tab:blue", linewidth=2.2,
                     label=f"mean (n={len(curves)})")
-            ax.fill_between(frame_numbers, mean_curve - std_curve, mean_curve + std_curve,
+            ax.fill_between(frame_times, mean_curve - std_curve, mean_curve + std_curve,
                              color="tab:blue", alpha=0.2, label="\u00b1 1 std")
         ax.legend(frameon=False)
         default_title = CATEGORY_LABELS.get(category, category)
@@ -291,17 +293,17 @@ def plot_attention_scores(data=None, npz_path=None, shot=None, shots=None, categ
             if value not in shot_to_index:
                 raise ValueError(f"Shot {value} is not in the held-out test set attention data.")
             # markers to make clear that each frame is a discrete point
-            ax.plot(frame_numbers, data["attention_weights"][shot_to_index[value]], marker="o", markersize=3,
+            ax.plot(frame_times, data["attention_weights"][shot_to_index[value]], marker="o", markersize=3,
                     color=colors[index % len(colors)], linewidth=1.6, label=f"shot {value}")
         if len(shots_to_plot) > 1 or has_highlights:
             ax.legend(frameon=False, fontsize=8, ncol=2)
         default_title = f"Shot {shots_to_plot[0]}" if len(shots_to_plot) == 1 else f"{len(shots_to_plot)} shots"
 
-    ax.set_xlabel("Frame number")
+    ax.set_xlabel("Time (\u03bcs)")
     ax.set_ylabel("Attention weight")
     if show_title:
         ax.set_title(title or default_title)
-    ax.set_xlim(frame_numbers[0], frame_numbers[-1])
+    ax.set_xlim(frame_times[0], frame_times[-1])
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
     ax.grid(alpha=0.25, linewidth=0.6)
@@ -321,7 +323,7 @@ def plot_attention_scores(data=None, npz_path=None, shot=None, shots=None, categ
 FIELD_PLOT_CONFIGS = {
     "BY": {"label": "BY", "unit": "G", "coe": 1e4, "cmap": "RdBu_r", "clim": (-500, 500)},
     "JY": {"label": "-JY", "unit": r"$MA/m^2$", "coe": -1e-6, "cmap": "BrBG", "clim": (-1.25, 1.25)},
-    "BR": {"label": "BR", "unit": "G", "coe": 1e4, "cmap": "RdBu_r", "clim": (-150, 150)},
+    "BR": {"label": "BR", "unit": "G", "coe": 1e4, "cmap": "RdBu_r", "clim": (-250, 250)},
     "BZ": {"label": "BZ", "unit": "G", "coe": 1e4, "cmap": "RdBu_r", "clim": (-600, 600)},
 }
 
@@ -403,6 +405,23 @@ def _draw_frame_panel(ax, frame, R, Z, channel, use_contour):
     return mesh
 
 
+def _add_axis_direction_arrows(ax, origin=(0.06, 0.1), color="black"):
+    """Small orientation indicator: arrows along +z (right) and +R (up) in a panel corner."""
+    # Panel box aspect ~ Z-span/R-span (~1.74), so the vertical fraction is larger
+    # to give both arrows roughly equal on-screen length.
+    dx, dy = 0.16, 0.28
+    arrow_props = dict(arrowstyle="-|>", color=color, linewidth=1.0, shrinkA=0, shrinkB=0,
+                       mutation_scale=7)
+    ax.annotate("", xy=(origin[0] + dx, origin[1]), xytext=origin, xycoords="axes fraction",
+                textcoords="axes fraction", arrowprops=arrow_props)
+    ax.annotate("", xy=(origin[0], origin[1] + dy), xytext=origin, xycoords="axes fraction",
+                textcoords="axes fraction", arrowprops=arrow_props)
+    ax.text(origin[0] + dx + 0.03, origin[1], "z", transform=ax.transAxes, fontsize=7,
+            ha="left", va="center", color=color)
+    ax.text(origin[0], origin[1] + dy + 0.04, "R", transform=ax.transAxes, fontsize=7,
+            ha="center", va="bottom", color=color)
+
+
 def plot_shot_frame_grid(shot, channel, high_start_frame, low_start_frame=0, n_frames=10,
                           frame_stride_us=2.0, use_contour=False, output_path=None):
     """2 rows x n_frames columns of raw field frames for one channel"""
@@ -458,6 +477,8 @@ def plot_shot_multichannel_frame_grid(shot, high_start_frame, low_start_frame=0,
         row_axes = [axes[row, column] for column in range(2 * n_frames + 1) if column != gap_column]
         axes[row, 0].set_ylabel(conf["label"], fontsize=9)
         fig.colorbar(mesh, ax=row_axes, location="right", shrink=0.85, pad=0.02, label=conf["unit"])
+
+    _add_axis_direction_arrows(axes[len(channels) - 1, 0])
 
     if output_path is not None:
         output_path = Path(output_path)
