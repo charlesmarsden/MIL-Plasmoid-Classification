@@ -3,6 +3,7 @@
 This repository contains the Python code needed to reproduce our results, as well as the results we obtained and the sbtach script used to run `paper_comparison_suite.py` on the Stellar cluster at Princeton Research Computing. Our paper can be found at
 
 arXiv/publication LINK: coming soon
+
 Data can be found at: https://doi.org/10.5281/zenodo.22048487
 
 It contains five folders:
