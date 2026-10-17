@@ -1,5 +1,8 @@
 # Code and results
 
+[![DOI](https://zenodo.org/badge/1340106396.svg)](https://doi.org/10.5281/zenodo.23443710) v1.0.0 (PoP Submission)
+
+
 This repository contains the Python code needed to reproduce our results, as well as the results we obtained and the sbtach script used to run `paper_comparison_suite.py` on the Stellar cluster at Princeton Research Computing. Our paper can be found at
 
 arXiv/publication LINK: coming soon
